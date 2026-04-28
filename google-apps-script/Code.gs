@@ -15,17 +15,14 @@ function doPost(e) {
     sheet.appendRow([
       new Date(),
       clean(payload.fullName),
-      clean(payload.phone),
       clean(payload.email),
-      clean(payload.preferredContact),
-      clean(payload.city),
-      clean(payload.state),
-      clean(payload.zip),
-      clean(payload.requestType),
-      clean(payload.responseTime),
-      clean(payload.details),
-      clean(payload.notes),
-      clean(payload.consent),
+      clean(payload.favoriteColor),
+      clean(payload.savorySnack),
+      clean(payload.likesCarrots),
+      clean(payload.favoriteDrink),
+      clean(payload.favoriteNonSavorySnack),
+      clean(payload.babyToothStory),
+      clean(payload.favoriteHeroCharacter),
       clean(payload.source)
     ]);
 
@@ -58,18 +55,15 @@ function getResponseSheet() {
 function ensureHeaders(sheet) {
   const headers = [
     'Timestamp',
-    'Full Name',
-    'Phone Number',
-    'Email Address',
-    'Preferred Contact Method',
-    'City',
-    'State',
-    'ZIP Code',
-    'Request Type',
-    'Response Timing',
-    'Request Details',
-    'Additional Notes',
-    'Consent',
+    'Name',
+    'Email',
+    'Favorite Color',
+    'Savory Snack',
+    'Likes Carrots',
+    'Favorite Drink',
+    'Favorite Non-Savory Snack',
+    'Craziest Way Lost Baby Tooth',
+    'Favorite Hero or Character',
     'Source'
   ];
 
