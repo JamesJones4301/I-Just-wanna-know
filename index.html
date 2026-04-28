@@ -146,7 +146,7 @@
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 96px;
       resize: vertical;
       line-height: 1.45;
     }
@@ -156,29 +156,6 @@
     textarea:focus {
       border-color: var(--brand-2);
       box-shadow: 0 0 0 4px rgba(29, 78, 216, .12);
-    }
-
-    .check-row {
-      display: grid;
-      grid-template-columns: 24px 1fr;
-      gap: 10px;
-      align-items: start;
-      padding: 13px;
-      border: 1px solid #cbd5e1;
-      border-radius: 14px;
-      background: #f8fafc;
-    }
-
-    .check-row input {
-      width: 20px;
-      min-height: 20px;
-      margin: 2px 0 0;
-    }
-
-    .check-row label {
-      margin: 0;
-      font-weight: 600;
-      line-height: 1.4;
     }
 
     .actions {
@@ -240,105 +217,76 @@
 <body>
   <main class="page">
     <section class="hero">
-      <span class="badge">Mobile Information Request</span>
+      <span class="badge">Mobile Backup Form</span>
       <h1>I Just Wanna Know</h1>
-      <p class="intro">Use this short form to send your question or request. It works on iPhone, Android, tablet, and desktop.</p>
+      <p class="intro">Answer these quick questions. This page works on iPhone, Android, tablet, and desktop.</p>
     </section>
 
-    <section class="card" aria-label="Information request form">
+    <section class="card" aria-label="I Just Wanna Know form">
       <form id="requestForm">
         <section class="section">
-          <h2 class="section-title">Contact Information</h2>
+          <h2 class="section-title">Your Information</h2>
           <div class="grid two">
             <div>
-              <label for="fullName">Full Name *</label>
+              <label for="fullName">Name *</label>
               <input id="fullName" name="fullName" type="text" autocomplete="name" required />
             </div>
             <div>
-              <label for="phone">Phone Number *</label>
-              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
-            </div>
-            <div>
-              <label for="email">Email Address *</label>
+              <label for="email">Email *</label>
               <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
-            <div>
-              <label for="preferredContact">Preferred Contact Method *</label>
-              <select id="preferredContact" name="preferredContact" required>
-                <option value="">Select one</option>
-                <option>Phone</option>
-                <option>Text</option>
-                <option>Email</option>
-              </select>
-            </div>
           </div>
         </section>
 
         <section class="section">
-          <h2 class="section-title">Location</h2>
-          <div class="grid two">
-            <div>
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" autocomplete="address-level2" />
-            </div>
-            <div>
-              <label for="state">State</label>
-              <input id="state" name="state" type="text" maxlength="2" autocomplete="address-level1" placeholder="TX" />
-            </div>
-            <div>
-              <label for="zip">ZIP Code</label>
-              <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" />
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">Request Details</h2>
+          <h2 class="section-title">Questions</h2>
           <div class="grid">
             <div>
-              <label for="requestType">Request Type *</label>
-              <select id="requestType" name="requestType" required>
+              <label for="favoriteColor">1. What is your favorite color? *</label>
+              <input id="favoriteColor" name="favoriteColor" type="text" required />
+            </div>
+            <div>
+              <label for="savorySnack">2. What is your savory snack? *</label>
+              <input id="savorySnack" name="savorySnack" type="text" required />
+            </div>
+            <div>
+              <label for="likesCarrots">3. Do you like carrots? *</label>
+              <select id="likesCarrots" name="likesCarrots" required>
                 <option value="">Select one</option>
-                <option>General Question</option>
-                <option>Service Request</option>
-                <option>Follow Up</option>
-                <option>Other</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Sometimes</option>
               </select>
             </div>
             <div>
-              <label for="responseTime">How soon do you need a response?</label>
-              <select id="responseTime" name="responseTime">
-                <option>No Rush</option>
-                <option>Today</option>
-                <option>This Week</option>
-              </select>
+              <label for="favoriteDrink">4. What is your favorite drink? *</label>
+              <input id="favoriteDrink" name="favoriteDrink" type="text" required />
             </div>
             <div>
-              <label for="details">What do you want to know? *</label>
-              <textarea id="details" name="details" required></textarea>
+              <label for="favoriteNonSavorySnack">5. What is your favorite non-savory snack? *</label>
+              <input id="favoriteNonSavorySnack" name="favoriteNonSavorySnack" type="text" required />
             </div>
             <div>
-              <label for="notes">Additional Notes</label>
-              <textarea id="notes" name="notes"></textarea>
+              <label for="babyToothStory">6. What is the craziest way you have lost a baby tooth? *</label>
+              <textarea id="babyToothStory" name="babyToothStory" required></textarea>
+            </div>
+            <div>
+              <label for="favoriteHeroCharacter">7. What is your favorite hero or character? *</label>
+              <input id="favoriteHeroCharacter" name="favoriteHeroCharacter" type="text" required />
             </div>
           </div>
         </section>
 
         <section class="section">
-          <h2 class="section-title">Consent</h2>
-          <div class="check-row">
-            <input id="consent" name="consent" type="checkbox" value="Yes" required />
-            <label for="consent">I agree to be contacted about this request. *</label>
-          </div>
           <div class="actions">
-            <button id="submitButton" type="submit">Submit Request</button>
+            <button id="submitButton" type="submit">Submit Answers</button>
             <div id="status" class="status" role="status" aria-live="polite"></div>
           </div>
         </section>
       </form>
     </section>
 
-    <p class="fine-print">This backup form sends your information to the response spreadsheet without requiring Google Forms to load.</p>
+    <p class="fine-print">This backup form sends answers to the response spreadsheet without requiring Google Forms to load.</p>
   </main>
 
   <script>
@@ -356,17 +304,14 @@
       const data = new FormData(form);
       return {
         fullName: data.get('fullName') || '',
-        phone: data.get('phone') || '',
         email: data.get('email') || '',
-        preferredContact: data.get('preferredContact') || '',
-        city: data.get('city') || '',
-        state: data.get('state') || '',
-        zip: data.get('zip') || '',
-        requestType: data.get('requestType') || '',
-        responseTime: data.get('responseTime') || '',
-        details: data.get('details') || '',
-        notes: data.get('notes') || '',
-        consent: data.get('consent') || 'No',
+        favoriteColor: data.get('favoriteColor') || '',
+        savorySnack: data.get('savorySnack') || '',
+        likesCarrots: data.get('likesCarrots') || '',
+        favoriteDrink: data.get('favoriteDrink') || '',
+        favoriteNonSavorySnack: data.get('favoriteNonSavorySnack') || '',
+        babyToothStory: data.get('babyToothStory') || '',
+        favoriteHeroCharacter: data.get('favoriteHeroCharacter') || '',
         source: 'Backup Web App'
       };
     }
@@ -374,14 +319,9 @@
     form.addEventListener('submit', async function(event) {
       event.preventDefault();
 
-      if (SCRIPT_URL.includes('PASTE_YOUR')) {
-        showStatus('bad', 'Setup needed. Add your Google Apps Script web app URL inside index.html.');
-        return;
-      }
-
       submitButton.disabled = true;
       submitButton.textContent = 'Submitting...';
-      showStatus('good', 'Sending your request...');
+      showStatus('good', 'Sending your answers...');
 
       try {
         await fetch(SCRIPT_URL, {
@@ -394,12 +334,12 @@
         });
 
         form.reset();
-        showStatus('good', 'Thank you. Your request was submitted.');
+        showStatus('good', 'Thank you. Your answers were submitted.');
       } catch (error) {
-        showStatus('bad', 'The request did not send. Please check your connection and try again.');
+        showStatus('bad', 'The answers did not send. Please check your connection and try again.');
       } finally {
         submitButton.disabled = false;
-        submitButton.textContent = 'Submit Request';
+        submitButton.textContent = 'Submit Answers';
       }
     });
   </script>
