@@ -1,4 +1,4 @@
-const SHEET_ID = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE';
+const SHEET_ID = '1prpf4EtoP9DrHiyb7Izr2pS7YML2HacfrBQxk8pARkk';
 const SHEET_NAME = 'Responses';
 
 function doGet() {
